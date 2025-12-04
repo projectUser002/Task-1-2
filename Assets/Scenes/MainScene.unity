@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 750948950}
   - component: {fileID: 750948949}
   - component: {fileID: 750948948}
+  - component: {fileID: 750948952}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -769,6 +770,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &750948952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750948947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae950767b55d3b544bcc2a1e2307c709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 666704086}
+  playerAnimator: {fileID: 1634477483}
+  attack1Button: {fileID: 0}
+  attack2Button: {fileID: 0}
+  attack3Button: {fileID: 0}
+  enemyManager: {fileID: 1509371493}
 --- !u!1 &995906266
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +1014,7 @@ GameObject:
   - component: {fileID: 1509371494}
   - component: {fileID: 1509371493}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: EnemyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,10 +1034,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 666704086}
   playerAnimator: {fileID: 1634477483}
-  enemyPrefabs:
-  - {fileID: 1463392086428580, guid: eaf37049c08ab7b4bb5f4df9edfea89e, type: 3}
-  - {fileID: 1689866831511430, guid: c56b3f167c385ca4ea4f0370bbf8392f, type: 3}
-  - {fileID: 1463392086428580, guid: 9dbf5d2d15d8ab94ca2fa96101564503, type: 3}
+  enemyPools:
+  - enemyPrefab: {fileID: 11918697995598860, guid: eaf37049c08ab7b4bb5f4df9edfea89e, type: 3}
+    poolSize: 3
+    pooledEnemies: []
+  - enemyPrefab: {fileID: 1230691161547999297, guid: c56b3f167c385ca4ea4f0370bbf8392f, type: 3}
+    poolSize: 3
+    pooledEnemies: []
+  - enemyPrefab: {fileID: 7265851889029992638, guid: 9dbf5d2d15d8ab94ca2fa96101564503, type: 3}
+    poolSize: 3
+    pooledEnemies: []
+  spawnOffset: {x: 3, y: 0, z: 0}
 --- !u!4 &1509371494
 Transform:
   m_ObjectHideFlags: 0
